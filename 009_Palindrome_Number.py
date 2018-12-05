@@ -18,7 +18,7 @@ class Solution:
             mid = n // 2
             return str(x)[0:mid] == str(x)[mid+1:][::-1]
 
-    def isPalindromePython(self, x):
+    def isPalindromeEasy(self, x):
         if x >= 0 and str(x) == str(x)[::-1]:
             a = True
         else:
