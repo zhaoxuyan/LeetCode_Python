@@ -1,2 +1,2 @@
-s = [1, 2, 3]
-print(s[-1:-3:-1])
+prices = [7, 6, 4, 3, 1]
+print(prices.index(min(prices)))
