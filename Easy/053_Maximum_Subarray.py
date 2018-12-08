@@ -23,7 +23,7 @@ class Solution:
         ans = nums[0]
         for number in nums:
             if sum > 0:
-                sum += number
+                sum = sum + number
             else:
                 sum = number
             if sum > ans:

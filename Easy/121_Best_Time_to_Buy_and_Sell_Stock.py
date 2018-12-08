@@ -16,6 +16,9 @@
 # 输入: [1,2,4,2,5,7,2,4,9,0,9]
 # 输出: 9
 class Solution:
+
+    # 解法1：
+    # 动态的找最低点买入（从左往右找），符合示例3
     def maxProfitLeetCode(self, prices):
         """
         :type prices: List[int]
@@ -24,16 +27,24 @@ class Solution:
 
         if len(prices) == 0:
             return 0
-        
+
         profit = 0
         buy = prices[0]
         for i, price in enumerate(prices):
+            # 动态的找最低点买入（从左往右找），符合示例3
             if price < buy:
                 buy = price
             if price - buy > profit:
                 profit = price - buy
 
         return profit
+
+    # 解法2：
+    # 该题解法和最大连续子数组和的解法思路是一样的。
+    # 1. 根据股票的利益意义，想要更多利益则值低时买进，值高时卖出。
+    #    根据提供的股票价格不方便得出股票价格变化，对原数据进行计算：list[i] - list[i - 1] = 股票的变化。
+    #    变化为正时股票增长（存在利益），变化为负时股票为下跌（无利益）。
+    # 2. 得到股票的变化值列表，即求最大子数组和，最后得到正解。
 
     def maxProfit(self, prices):
         """
