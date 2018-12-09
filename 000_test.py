@@ -1,2 +1,3 @@
-prices = [7, 6, 4, 3, 1]
-print(prices.index(min(prices)))
+nums1 = [1, 2, 3, 0, 0, 0]
+nums2 = [2, 5, 6]
+print(nums1+nums2)
