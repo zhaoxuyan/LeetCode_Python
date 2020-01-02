@@ -46,4 +46,4 @@ class Solution:
 
 if __name__ == '__main__':
     obj = Solution()
-    print(obj.isValid("[()]"))
+    print(obj.isValid("[()"))
