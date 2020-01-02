@@ -1,3 +1,4 @@
+# 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串
 # 示例 1:
 # 输入: "()"
 # 输出: true
@@ -31,15 +32,18 @@ class Solution:
         if len(s) == 0:
             return True
 
-        d = {'{': '}', '[': ']', '(': ')'}
-        # 用栈来解决
+        template = {"(": ")", "[": "]", "{": "}"}
         stack = []
         for i in s:
-            # in stack
-            if i in d:
+            # 如果是正括号
+            if i in template:
                 stack.append(i)
-            else:
-                if stack == [] or d[stack.pop()] != i:  # 如果栈为空或者栈顶的元素不是i的范括号
-                    return False
-
+            # 如果是反括号
+            elif stack == [] or template[stack.pop()] != i:
+                return False
         return stack == []
+
+
+if __name__ == '__main__':
+    obj = Solution()
+    print(obj.isValid("[()]"))
