@@ -37,6 +37,7 @@ class Solution:
 
                 # 回溯
                 # 如果接下来的尝试中 每个位置(列)都不可以 return了
+                # 注意python set中的remove和discard的区别
                 self.cols.remove(col)
                 self.pie.remove(row + col)
                 self.na.remove(row - col)
