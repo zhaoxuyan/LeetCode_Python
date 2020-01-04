@@ -9,7 +9,9 @@
 # 其中划分子区域的技巧很巧妙,使用的是 pos = (i//3)*3 + j//3.
 class Solution:
     def isValidSudoku(self, board) -> bool:
+        # 9个set 分别表示9行
         matrix_line = [set() for i in range(9)]
+        # 9个set 分别表示9列
         matrix_column = [set() for i in range(9)]
         matrix_area = [set() for i in range(9)]
         for i in range(9):

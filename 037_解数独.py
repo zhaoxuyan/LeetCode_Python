@@ -41,7 +41,7 @@ class Solution:
                             if self.solve(board):
                                 return True
                             else:
-                                # 还原
+                                # 回溯, 还原
                                 board[i][j] = '.'
                     return False
         return True
