@@ -35,6 +35,8 @@ class Solution:
             if abs(left - right) < 1e-9:
                 return right
             elif temp > x:
+                # 注意是mid 不是mid - 1 !!
+                # 因为mid是一个浮点数
                 right = mid
             else:
                 left = mid
