@@ -7,6 +7,7 @@ class Trie:
     def __init__(self):
         # 字典 {}
         self.root = {}
+        # 判断是前缀or一个完整的词
         self.end_of_word = "#"
 
     def insert(self, word: str) -> None:
@@ -16,6 +17,7 @@ class Trie:
             # setdefault类似于get, 获取值
             # 如果char为node中的key，则将值取出来
             # 如果char 这个key 不存在，则设置新的key, char : {}
+            # 一层一层的嵌套字典
             node = node.setdefault(char, {})
         node[self.end_of_word] = self.end_of_word
         # {'f': {'i': {'s': {'h': {'#': '#'}}}}}
@@ -29,6 +31,7 @@ class Trie:
         for char in word:
             if char not in node:
                 return False
+            # 一层一层的往下看
             node = node[char]
         # 是要全部字符看完
         return self.end_of_word in node
