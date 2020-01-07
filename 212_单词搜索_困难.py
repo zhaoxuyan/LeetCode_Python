@@ -47,6 +47,8 @@ class Solution:
             for j in range(self.n):
                 if board[i][j] in root:
                     self.dfs(board, i, j, "", root)
+
+        # 返回结果
         return self.result
 
     def dfs(self, board, i, j, cur_word, cur_dict):
